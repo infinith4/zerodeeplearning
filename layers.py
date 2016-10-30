@@ -1,4 +1,7 @@
 import numpy as np
+import sys,os
+sys.path.append(os.curdir)
+from common.functions import *
 
 class Relu:
     def __init__(self):
@@ -16,7 +19,7 @@ class Affine:
     def __init__(self,W,b):
         self.W = W
         self.b = b
-        self.x None
+        self.x = None
         self.dw = None
         self.db = None
     def forward(self,x):
