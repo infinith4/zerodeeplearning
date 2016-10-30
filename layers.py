@@ -45,7 +45,7 @@ class SoftmaxWithLoss:
         batch_size=self.t.shape[0]
         dx=(self.x-self.t)/batch_size
         return dx
-        
+
 x = np.array([[1.0,-0.5],[-2.0,3.0]])
 print(x)
 
