@@ -28,7 +28,21 @@ class Affine:
         self.dw = np.dot(self.x.T,dout)
         self.db = np.sum(dout,axis=0)
         return dx
-
+class SoftmaxWithLoss:
+    def __init__(self):
+        self.loss = None
+        self.y = None
+        self.t = None
+    def forward(self,x,t):
+        self.t = t
+        self.y = softmax(x)
+        self.loss = cross_entropy_errror(self.y,self.t)
+        return self.loss
+    def backward(self,dout=1):
+        batch_size=self.t.shape[0]
+        dx=(self.x-self.t)/batch_size
+        return dx
+        
 x = np.array([[1.0,-0.5],[-2.0,3.0]])
 print(x)
 
