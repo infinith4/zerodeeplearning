@@ -15,4 +15,12 @@ grad_backprop = network.gradient(x_batch,t_batch)
 for key in grad_numerical.keys():
     diff = np.average(np.abs(grad_backprop[key]-grad_numerical[key]))
     print(key + ":" + str(diff))
-    
+# W2:8.40451683671e-13
+# b2:1.20126125713e-10
+# b1:1.03517937278e-12
+# W1:2.2455573235e-13
+
+# b2:1.20570220474e-10
+# W2:1.00584997791e-12
+# b1:9.83043057763e-13
+# W1:2.68616411544e-13
