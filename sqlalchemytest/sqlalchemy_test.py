@@ -7,10 +7,6 @@ cfg.read('settings.cfg')
 url = 'mysql+pymysql://{0}:{1}@{2}/infbot_db?charset=utf8'.format(cfg['mysql']['user'], cfg['mysql']['password'], cfg['mysql']['host'])
 print(url)
 
-<<<<<<< HEAD
-=======
-url = 'mysql+pymysql://phpmyadmin:m@localhost/infbot_db?charset=utf8'
->>>>>>> d065f29df05d85faec36dcfb41a61b21869d0373
 engine = sa.create_engine(url, echo=True)
 
 engine.execute('DROP TABLE zoo')
