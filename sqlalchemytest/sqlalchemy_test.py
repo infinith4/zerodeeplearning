@@ -4,7 +4,7 @@ import configparser
 cfg = configparser.ConfigParser()
 cfg.read('settings.cfg')
 
-url = 'mysql+pymysql://{0}:{1}@{2}/infbot_db?charset=utf8'.format(cfg['mysql']['user'], cfg['mysql']['password'], cfg['mysql']['host']) #'mysql+pymysql://phpmyadmin:m@localhost/infbot_db?charset=utf8'
+url = 'mysql+pymysql://{0}:{1}@{2}/infbot_db?charset=utf8'.format(cfg['mysql']['user'], cfg['mysql']['password'], cfg['mysql']['host'])
 print(url)
 
 engine = sa.create_engine(url, echo=True)
