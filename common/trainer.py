@@ -3,6 +3,9 @@ import sys, os
 sys.path.append(os.curdir)  # 親ディレクトリのファイルをインポートするための設定
 import numpy as np
 from common.optimizer import *
+import time
+import progressbar
+bar = progressbar.ProgressBar(max_value=progressbar.UnknownLength)
 
 class Trainer:
     """ニューラルネットの訓練を行うクラス
@@ -69,7 +72,9 @@ class Trainer:
     def train(self):
         for i in range(self.max_iter):
             self.train_step()
-
+            bar.update(i)
+            print("\n")
+            
         test_acc = self.network.accuracy(self.x_test, self.t_test)
 
         if self.verbose:
