@@ -19,3 +19,6 @@ trainer.train()
 # パラメータの保存
 network.save_params("deep_convnet_params.pkl")
 print("Saved Network Parameters!")
+
+#test acc:0.9937
+#Saved Network Parameters!
